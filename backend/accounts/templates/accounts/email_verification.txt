@@ -1,0 +1,14 @@
+Welcome to Our Platform!
+
+Hi {{ user.first_name|default:user.username }},
+
+Thank you for registering with us. Please verify your email address by visiting the following link:
+
+{{ verification_url }}
+
+If you didn't create this account, you can safely ignore this email.
+
+Best regards,
+The Team
+
+This email was sent to {{ user.email }}. If you have any questions, please contact our support team.
