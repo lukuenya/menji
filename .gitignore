@@ -12,8 +12,18 @@ dist
 dist-ssr
 *.local
 
+# Environment files
+.env
+.env.*
+.env.local
+.env.development
+.env.production
+.env.test
+
 # Prompts
 *.prompt.*
+Prompt/
+prompt/
 
 # Editor directories and files
 .vscode/*
