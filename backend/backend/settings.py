@@ -96,9 +96,9 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get('DB_NAME', 'menji_db'),
         'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'Salama33@'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'S@l@m@33'),
         'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5433'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 

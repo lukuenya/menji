@@ -242,7 +242,7 @@ const WarMap: React.FC = () => {
   useEffect(() => {
     if (mapDivRef.current) {
       const webMap = new WebMap({
-        basemap: 'topo-vector'
+        basemap: 'satellite' // Satellite imagery basemap
       });
 
       const view = new MapView({

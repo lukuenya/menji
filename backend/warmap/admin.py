@@ -9,9 +9,9 @@ class LocationAdmin(gis_admin.GISModelAdmin):
     list_display = ('name', 'created_at', 'updated_at')
     search_fields = ('name', 'description')
     readonly_fields = ('created_at', 'updated_at')
-    default_lon = 29.0  # Default longitude (around DRC)
-    default_lat = -1.5  # Default latitude (around DRC)
-    default_zoom = 8
+    default_lon = 29.2494  # Default longitude (around DRC)
+    default_lat = -1.5207  # Default latitude (around DRC)
+    default_zoom = 6
 
 @admin.register(Event)
 class EventAdmin(gis_admin.GISModelAdmin):
@@ -19,9 +19,9 @@ class EventAdmin(gis_admin.GISModelAdmin):
     list_filter = ('event_type', 'severity', 'verified')
     search_fields = ('title', 'description')
     readonly_fields = ('created_at', 'updated_at')
-    default_lon = 29.0
-    default_lat = -1.5
-    default_zoom = 8
+    default_lon = 29.2494  # Default longitude (around DRC)
+    default_lat = -1.5207  # Default latitude (around DRC)
+    default_zoom = 6
 
 @admin.register(Area)
 class AreaAdmin(gis_admin.GISModelAdmin):
@@ -30,9 +30,9 @@ class AreaAdmin(gis_admin.GISModelAdmin):
     search_fields = ('name', 'description')
     readonly_fields = ('created_at', 'updated_at')
     date_hierarchy = 'date'
-    default_lon = 29.0
-    default_lat = -1.5
-    default_zoom = 8
+    default_lon = 29.2494  # Default longitude (around DRC)
+    default_lat = -1.5207  # Default latitude (around DRC)
+    default_zoom = 6
     
     def save_model(self, request, obj, form, change):
         if not change:  # If this is a new object
@@ -46,9 +46,9 @@ class AreaHistoryAdmin(gis_admin.GISModelAdmin):
     search_fields = ('area__name',)
     readonly_fields = ('recorded_at',)
     date_hierarchy = 'date'
-    default_lon = 29.0
-    default_lat = -1.5
-    default_zoom = 8
+    default_lon = 29.2494  # Default longitude (around DRC)
+    default_lat = -1.5207  # Default latitude (around DRC)
+    default_zoom = 6
 
 @admin.register(Movement)
 class MovementAdmin(gis_admin.GISModelAdmin):
@@ -57,6 +57,6 @@ class MovementAdmin(gis_admin.GISModelAdmin):
     search_fields = ('name', 'description')
     readonly_fields = ('created_at', 'updated_at')
     date_hierarchy = 'start_date'
-    default_lon = 29.0
-    default_lat = -1.5
-    default_zoom = 8
+    default_lon = 29.2494  # Default longitude (around DRC)
+    default_lat = -1.5207  # Default latitude (around DRC)
+    default_zoom = 6
