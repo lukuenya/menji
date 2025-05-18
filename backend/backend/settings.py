@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.environ.get('DB_NAME', 'menji_db'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'S@l@m@33'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'NAME': config('DB_NAME', default='menji_db'),
+        'USER': config('DB_USER', default='postgres'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
@@ -183,15 +183,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # Or your SMTP server
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='')
+ADMIN_EMAIL = config('ADMIN_EMAIL', default='')
 
 # GeoDjango settings
 import os
 if os.name == 'nt':
-    OSGEO4W = r"P:\GIS\OSGeo4W"
+    OSGEO4W = config('OSGEO4W_PATH', default=r"P:\GIS\OSGeo4W")
     os.environ['OSGEO4W_ROOT'] = OSGEO4W
     os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
     os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
